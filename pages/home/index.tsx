@@ -286,9 +286,9 @@ const Home: FC = () => {
                 className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen"
                 onMouseLeave={() => mouseMove()}
             >
-                <div className="fullscreen-container">
-                    <div ref={fullPageScroll} id="all-pages">
-                        <section className="page h-screen">
+                <div className="overflow-hidden">
+                    <div ref={fullPageScroll} className="transition-all duration-300 relative">
+                        <section className="w-full h-screen">
                             <div className={cn('lg:-mt-1 md:-mt-6 sm:-mt-14 -mt-14')}>
                                 <div className={' '}>
                                     <div className="overflow-x-hidden absolute w-full -mt-2">
@@ -370,8 +370,8 @@ const Home: FC = () => {
                             </div>
                         </section>
                         {show && (
-                            <section className="page h-screen">
-                                <div className="lg:mt-0 md:-mt-26">
+                            <section className="w-full h-screen">
+                                <div className="">
                                     <Zoom>
                                         <div
                                             className={cn(`transform transition-all duration-1000`)}
@@ -535,7 +535,7 @@ const Home: FC = () => {
                                 </div>
                             </section>
                         )}
-                        <section className={cn(`page h-screen`)}>
+                        <section className={cn(`w-full h-screen`)}>
                             <div className="">
                                 <Modal
                                     className="w-full"
@@ -611,7 +611,7 @@ const Home: FC = () => {
                                     {screen == false && (
                                         <div
                                             className={cn(
-                                                `xs:mt-14 mt-7 flex justify-center items-center`,
+                                                `absolute xs:mt-14 mt-7 flex justify-center items-center`,
                                             )}
                                         >
                                             <Form backgroundForm={colorLogo || '#9ADEEC'} />

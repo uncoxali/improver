@@ -77,7 +77,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
     return (
         <>
             <div
-                className="relative 3xl:h-90 3xl:w-120 2xl:h-110 3xl:mt-10  lg:h-100 lg:w-100 md:w-46 md:h-90 w-98 h-91  rounded-2xl"
+                className="relative 3xl:h-90 3xl:w-120 2xl:h-110 3xl:mt-10  lg:h-100 lg:w-100 md:w-46 md:h-90 w-98 h-85  rounded-2xl"
                 style={{ backgroundColor: backgroundForm }}
             >
                 <div className="">
