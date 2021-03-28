@@ -286,10 +286,10 @@ const Home: FC = () => {
                 className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen"
                 onMouseLeave={() => mouseMove()}
             >
-                <div className="overflow-hidden h-screen">
-                    <div ref={fullPageScroll} className="transition-all duration-300 relative">
-                        <section className="w-full h-screen">
-                            <div className={cn('lg:-mt-1 md:-mt-6 sm:-mt-14 -mt-14')}>
+                <div className="fullscreen-container">
+                    <div ref={fullPageScroll} id="all-pages">
+                        <section className="page">
+                            <div className={cn('-mt-1')}>
                                 <div className={' '}>
                                     <div className="overflow-x-hidden absolute w-full -mt-2">
                                         <BackgroundColor
@@ -300,7 +300,7 @@ const Home: FC = () => {
                                     <div className="flex lg:top-6 md:top-7 top-16 lg:mt-2 md:-mt-2 -mt-7 w-full absolute justify-center items-center">
                                         <div className="lg:mr-10 md:mr-10 mr-2 right-0 absolute">
                                             <img
-                                                className=" lg:w-18 md:w-8 w-7"
+                                                className="3xl:w-10 lg:w-10 md:w-10 w-10"
                                                 src="/images/menu.png"
                                                 alt=""
                                             />
@@ -370,7 +370,7 @@ const Home: FC = () => {
                             </div>
                         </section>
                         {show && (
-                            <section className="w-full h-screen">
+                            <section className="page">
                                 <div className="">
                                     <Zoom>
                                         <div
@@ -386,7 +386,7 @@ const Home: FC = () => {
                                                 <div className="h-16 mt-10 lg:mt-24 md:mt-24">
                                                     <div className="lg:mr-10 md:mr-10 mr-4 mt-4 right-0 absolute ">
                                                         <img
-                                                            className="lg:w-8 md:w-10 w-7"
+                                                            className="lg:w-10 md:w-10 w-7"
                                                             src="/images/menu.png"
                                                             alt=""
                                                         />
@@ -535,7 +535,7 @@ const Home: FC = () => {
                                 </div>
                             </section>
                         )}
-                        <section className={cn(`w-full h-screen`)}>
+                        <section className={cn(``)}>
                             <div className="">
                                 <Modal
                                     className="w-full"
@@ -558,7 +558,7 @@ const Home: FC = () => {
                                 </Modal>
                             </div>
                             {/* slidet menu in form */}
-                            <div className="lg:-mt-24 md:-mt-24 -mt-10">
+                            <div className="lg:-mt-24 -mt-10">
                                 {/* <Logo dataImage={dataImage} /> */}
                                 <div className={cn('')} ref={form}>
                                     <div className={cn(`transform transition-all duration-1000 `)}>
@@ -608,16 +608,17 @@ const Home: FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    {screen == false && (
+                                        <div
+                                            className={cn(
+                                                `xs:-mt-1 mt-7 flex justify-center items-center`,
+                                            )}
+                                        >
+                                            <Form backgroundForm={colorLogo || '#9ADEEC'} />
+                                        </div>
+                                    )}
 
-                                    <div
-                                        className={cn(
-                                            `3xl:mt-16 xl:mt-10 md:mt-10 xs:mt-14 mt-7 flex justify-center items-center`,
-                                        )}
-                                    >
-                                        <Form backgroundForm={colorLogo || '#9ADEEC'} />
-                                    </div>
-
-                                    {/* {screen == true && (
+                                    {screen == true && (
                                         <div
                                             className={cn(
                                                 `3xl:mt-16 xl:mt-10 md:mt-10 flex justify-center items-center`,
@@ -625,7 +626,7 @@ const Home: FC = () => {
                                         >
                                             <Form backgroundForm={colorLogo || '#9ADEEC'} />
                                         </div>
-                                    )} */}
+                                    )}
                                 </div>
                             </div>
                             {/* <div className={cn(`mt-16`)}>
