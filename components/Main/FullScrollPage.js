@@ -120,21 +120,21 @@ class FullScrollPage {
             document.addEventListener('DOMMouseScroll', handleMouseWheel);
         }
         document.addEventListener('scroll', handleMouseWheel);
-        // document.addEventListener('touchstart', (event) => {
-        //     this.startY = event.touches[0].pageY;
-        // });
-        // document.addEventListener('touchend', (event) => {
-        //     let endY = event.changedTouches[0].pageY;
-        //     if (this.startY - endY < 0) {
-        //         this.scrollUp();
-        //     }
-        //     if (this.startY - endY > 0) {
-        //         this.scrollDown();
-        //     }
-        // });
-        // document.addEventListener('touchmove', (event) => {
-        //     event.preventDefault();
-        // });
+        document.addEventListener('touchstart', (event) => {
+            this.startY = event.touches[0].pageY;
+        });
+        document.addEventListener('touchend', (event) => {
+            let endY = event.changedTouches[0].pageY;
+            if (this.startY - endY < 0) {
+                this.scrollUp();
+            }
+            if (this.startY - endY > 0) {
+                this.scrollDown();
+            }
+        });
+        document.addEventListener('touchmove', (event) => {
+            event.preventDefault();
+        });
         window.addEventListener('resize', handleResize);
     }
 }
