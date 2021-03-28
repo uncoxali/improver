@@ -371,7 +371,7 @@ const Home: FC = () => {
                         </section>
                         {show && (
                             <section className="w-full h-screen">
-                                <div className="">
+                                <div className="-mt-3">
                                     <Zoom>
                                         <div
                                             className={cn(`transform transition-all duration-1000`)}
@@ -558,7 +558,7 @@ const Home: FC = () => {
                                 </Modal>
                             </div>
                             {/* slidet menu in form */}
-                            <div className="lg:-mt-24 md:-mt-24 -mt-10">
+                            <div className="lg:-mt-24 md:-mt-24 -mt-16">
                                 {/* <Logo dataImage={dataImage} /> */}
                                 <div className={cn('')} ref={form}>
                                     <div className={cn(`transform transition-all duration-1000 `)}>

@@ -18,15 +18,15 @@ const helper = {
             }
         };
     },
-    debounce(method, delay, context) {
-        let inDebounce;
-        return function () {
-            clearTimeout(method.inDebounce);
-            inDebounce = setTimeout(() => {
-                method.apply(context, arguments);
-            }, delay);
-        };
-    },
+    // debounce(method, delay, context) {
+    //     let inDebounce;
+    //     return function () {
+    //         clearTimeout(method.inDebounce);
+    //         inDebounce = setTimeout(() => {
+    //             method.apply(context, arguments);
+    //         }, delay);
+    //     };
+    // },
 };
 class FullScrollPage {
     constructor(currentPageNumber, totalPageNumber, pages) {
@@ -110,7 +110,7 @@ class FullScrollPage {
     // }
     init() {
         let handleMouseWheel = helper.throttle(this.mouseScroll, 0, this);
-        let handleResize = helper.debounce(this.resize, 0, this);
+        // let handleResize = helper.debounce(this.resize, 0, this);
         this.pages.style.height = this.viewHeight + 'px';
         // this.createNav();
         // this.textFadeInOut();
@@ -135,7 +135,7 @@ class FullScrollPage {
         document.addEventListener('touchmove', (event) => {
             event.preventDefault();
         });
-        window.addEventListener('resize', handleResize);
+        // window.addEventListener('resize', handleResize);
     }
 }
 
