@@ -1,0 +1,32 @@
+.wave {
+    animation-name: swell;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear
+}
+
+@keyframes swell {
+    0% {
+        transform: translate3d(-15%);
+    }
+    50% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translate3d(-50px);
+    }
+}
+
+
+/* @keyframes swell {
+    0% {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+} */

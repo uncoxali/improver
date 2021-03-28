@@ -1,0 +1,72 @@
+.scale {
+    animation: scale 1.5s alternate infinite ease-in;
+}
+
+.shadowBtn {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.scale:focus {
+    outline: none;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.body {
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.div {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.cart {
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.border {
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+/* iphone */
+
+.inputScale {
+    padding: 13.33333333333px;
+    background-color: transparent;
+    font-size: 16px;
+    text-align: left;
+    height: 48px;
+    width: 133.333333333333333%;
+
+    /* scale down by 12/16 = 75% */
+    transform: scale(0.75);
+    transform-origin: right top;
+    margin-bottom: -12px;
+    margin-left: -33.333%;
+}
+
+.max {
+    height: max-content;
+}
