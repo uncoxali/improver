@@ -109,8 +109,8 @@ class FullScrollPage {
         // textContainerInSight.classList.add('in-sight');
     }
     init() {
-        let handleMouseWheel = helper.throttle(this.mouseScroll, 500, this);
-        let handleResize = helper.debounce(this.resize, 500, this);
+        let handleMouseWheel = helper.throttle(this.mouseScroll, 100, this);
+        let handleResize = helper.debounce(this.resize, 100, this);
         this.pages.style.height = this.viewHeight + 'px';
         this.createNav();
         this.textFadeInOut();
@@ -120,10 +120,10 @@ class FullScrollPage {
             document.addEventListener('DOMMouseScroll', handleMouseWheel);
         }
         document.addEventListener('scroll', handleMouseWheel);
-        document.addEventListener('touchstart', (event) => {
+        document.addEventListener('scroll', (event) => {
             this.startY = event.touches[0].pageY;
         });
-        document.addEventListener('touchend', (event) => {
+        document.addEventListener('scroll', (event) => {
             let endY = event.changedTouches[0].pageY;
             if (this.startY - endY < 0) {
                 this.scrollUp();
