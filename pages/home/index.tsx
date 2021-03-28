@@ -288,7 +288,7 @@ const Home: FC = () => {
             >
                 <div className="fullscreen-container">
                     <div ref={fullPageScroll} id="all-pages">
-                        <section className="page">
+                        <section className="page h-screen">
                             <div className={cn('lg:-mt-1 md:-mt-6 sm:-mt-14 -mt-14')}>
                                 <div className={' '}>
                                     <div className="overflow-x-hidden absolute w-full -mt-2">
@@ -370,7 +370,7 @@ const Home: FC = () => {
                             </div>
                         </section>
                         {show && (
-                            <section className="page">
+                            <section className="page h-screen">
                                 <div className="lg:mt-0 md:-mt-26">
                                     <Zoom>
                                         <div
@@ -535,7 +535,7 @@ const Home: FC = () => {
                                 </div>
                             </section>
                         )}
-                        <section className={cn(``)}>
+                        <section className={cn(`page h-screen`)}>
                             <div className="">
                                 <Modal
                                     className="w-full"
@@ -634,7 +634,6 @@ const Home: FC = () => {
                             </div> */}
                         </section>
                     </div>
-                    <section className="page">hello</section>
                 </div>
             </div>
         );
