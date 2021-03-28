@@ -8,8 +8,10 @@ export interface SliderProps {
     getColor?: (item: any) => any;
     buttonColor?: any;
     animation?: boolean;
+
 }
 const Slider: React.FC<SliderProps> = ({ data, renderItem, getColor }) => {
+
     const [currentSlide, setCurrentSlide] = useState(0);
     const [sliderRef, slider] = useKeenSlider<any>({
         breakpoints: {
@@ -62,8 +64,9 @@ const Slider: React.FC<SliderProps> = ({ data, renderItem, getColor }) => {
     }, [pause, slider]);
 
     useEffect(() => {
-        if (getColor) getColor(data[currentSlide]);
-    }, [currentSlide]);
+        if (getColor)
+            getColor(data[currentSlide])
+    }, [currentSlide])
 
     return (
         <div className="relative w-full max-w-8xl mx-auto  flex flex-col">
@@ -71,11 +74,7 @@ const Slider: React.FC<SliderProps> = ({ data, renderItem, getColor }) => {
                 {data?.map((item, index) => {
                     return (
                         <div key={index} className={`keen-slider__slide ${index === currentSlide}`}>
-                            <div
-                                className={`transfor flex justify-center  ${
-                                    index === currentSlide
-                                }`}
-                            >
+                            <div className={`transfor flex justify-center  ${index === currentSlide}`}>
                                 {renderItem(item, index, index === currentSlide)}
                             </div>
                             <div className="flex lg:text-lg md:text-lg text-xs justify-center mt-3 font-bold opacity-75 text-white">

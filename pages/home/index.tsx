@@ -289,7 +289,7 @@ const Home: FC = () => {
                 <div className="fullscreen-container">
                     <div ref={fullPageScroll} id="all-pages">
                         <section className="page">
-                            <div className={cn('-mt-1')}>
+                            <div className={cn('lg:mt-0 md:-mt-6 sm:-mt-14 -mt-14')}>
                                 <div className={' '}>
                                     <div className="overflow-x-hidden absolute w-full -mt-2">
                                         <BackgroundColor
@@ -558,7 +558,7 @@ const Home: FC = () => {
                                 </Modal>
                             </div>
                             {/* slidet menu in form */}
-                            <div className="lg:-mt-24 -mt-10">
+                            <div className="lg:-mt-25 -mt-10">
                                 {/* <Logo dataImage={dataImage} /> */}
                                 <div className={cn('')} ref={form}>
                                     <div className={cn(`transform transition-all duration-1000 `)}>

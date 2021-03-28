@@ -77,7 +77,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
     return (
         <>
             <div
-                className="relative 3xl:h-90 3xl:w-120 2xl:h-110 3xl:mt-10  lg:h-100 lg:w-100 md:w-46 md:h-90 w-98 h-85  rounded-2xl"
+                className="relative 3xl:h-90 3xl:w-120 2xl:h-110 3xl:mt-10  lg:h-100 lg:w-100 md:w-46 md:h-90 w-98 h-91  rounded-2xl"
                 style={{ backgroundColor: backgroundForm }}
             >
                 <div className="">
@@ -201,6 +201,8 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                     <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs">
                                         MESAJ
                                         <textarea
+                                            onBlur={() => onInputFocus && onInputFocus(true)}
+                                            onFocus={() => onInputFocus && onInputFocus(false)}
                                             name="description"
                                             ref={register({ required: true })}
                                             className={cn(
@@ -311,7 +313,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                 <Form5 />
                             </div>
                             <div className="lg:right-5 md:right-5 right-20 -bottom-0 z-10 absolute">
-                                {/* <Form14 /> */}
+                                <Form14 />
                             </div>
                             <div className="left-44 -bottom-0 z-10 absolute lg:block md:block hidden">
                                 <Form21 />
