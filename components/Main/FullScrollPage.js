@@ -114,11 +114,11 @@ class FullScrollPage {
         this.pages.style.height = this.viewHeight + 'px';
         this.createNav();
         this.textFadeInOut();
-        if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
-            document.addEventListener('wheel', handleMouseWheel);
-        } else {
-            document.addEventListener('DOMMouseScroll', handleMouseWheel);
-        }
+        // if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
+        //     document.addEventListener('wheel', handleMouseWheel);
+        // } else {
+        //     document.addEventListener('DOMMouseScroll', handleMouseWheel);
+        // }
         document.addEventListener('scroll', handleMouseWheel);
         document.addEventListener('touchstart', (event) => {
             this.startY = event.touches[0].pageY;

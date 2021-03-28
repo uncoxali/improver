@@ -201,8 +201,6 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                     <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs">
                                         MESAJ
                                         <textarea
-                                            onBlur={() => onInputFocus && onInputFocus(true)}
-                                            onFocus={() => onInputFocus && onInputFocus(false)}
                                             name="description"
                                             ref={register({ required: true })}
                                             className={cn(

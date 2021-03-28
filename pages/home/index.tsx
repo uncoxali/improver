@@ -286,7 +286,7 @@ const Home: FC = () => {
                 className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen"
                 onMouseLeave={() => mouseMove()}
             >
-                <div className="overflow-hidden">
+                <div className="overflow-hidden h-screen">
                     <div ref={fullPageScroll} className="transition-all duration-300 relative">
                         <section className="w-full h-screen">
                             <div className={cn('lg:-mt-1 md:-mt-6 sm:-mt-14 -mt-14')}>
@@ -608,17 +608,16 @@ const Home: FC = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    {screen == false && (
-                                        <div
-                                            className={cn(
-                                                `absolute xs:mt-14 mt-7 flex justify-center items-center`,
-                                            )}
-                                        >
-                                            <Form backgroundForm={colorLogo || '#9ADEEC'} />
-                                        </div>
-                                    )}
 
-                                    {screen == true && (
+                                    <div
+                                        className={cn(
+                                            `3xl:mt-16 xl:mt-10 md:mt-10 xs:mt-14 mt-7 flex justify-center items-center`,
+                                        )}
+                                    >
+                                        <Form backgroundForm={colorLogo || '#9ADEEC'} />
+                                    </div>
+
+                                    {/* {screen == true && (
                                         <div
                                             className={cn(
                                                 `3xl:mt-16 xl:mt-10 md:mt-10 flex justify-center items-center`,
@@ -626,7 +625,7 @@ const Home: FC = () => {
                                         >
                                             <Form backgroundForm={colorLogo || '#9ADEEC'} />
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                             </div>
                             {/* <div className={cn(`mt-16`)}>
