@@ -311,7 +311,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                 <Form5 />
                             </div>
                             <div className="lg:right-5 md:right-5 right-20 -bottom-0 z-10 absolute">
-                                <Form14 />
+                                {/* <Form14 /> */}
                             </div>
                             <div className="left-44 -bottom-0 z-10 absolute lg:block md:block hidden">
                                 <Form21 />

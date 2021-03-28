@@ -47,20 +47,20 @@ class FullScrollPage {
         if (this.currentPageNumber !== this.totalPageNumber) {
             this.pages.style.top = -this.viewHeight * this.currentPageNumber + 'px';
             this.currentPageNumber++;
-            this.updateNav();
-            this.textFadeInOut();
+            // this.updateNav();
+            // this.textFadeInOut();
         }
     }
     scrollUp() {
         if (this.currentPageNumber !== 1) {
             this.pages.style.top = -this.viewHeight * (this.currentPageNumber - 2) + 'px';
             this.currentPageNumber--;
-            this.updateNav();
-            this.textFadeInOut();
+            // this.updateNav();
+            // this.textFadeInOut();
         }
     }
     scrollTo(targetPageNumber) {
-        while (this.currentPageNumber !== targetPageNumber) {
+        if (this.currentPageNumber !== targetPageNumber) {
             if (this.currentPageNumber > targetPageNumber) {
                 this.scrollUp();
             } else {
@@ -68,52 +68,52 @@ class FullScrollPage {
             }
         }
     }
-    createNav() {
-        const pageNav = document.createElement('div');
-        pageNav.className = 'nav-dot-container';
-        this.pages.appendChild(pageNav);
-        for (let i = 0; i < this.totalPageNumber; i++) {
-            pageNav.innerHTML += '<p class="nav-dot"><span></span></p>';
-        }
-        const navDots = document.getElementsByClassName('nav-dot');
-        this.navDots = Array.prototype.slice.call(navDots);
-        this.navDots[0].classList.add('dot-active');
-        this.navDots.forEach((e, index) => {
-            e.addEventListener('click', (event) => {
-                this.scrollTo(index + 1);
-                this.navDots.forEach((e) => {
-                    e.classList.remove('dot-active');
-                });
-                e.classList.add('dot-active');
-            });
-        });
-    }
-    updateNav() {
-        this.navDots.forEach((e) => {
-            e.classList.remove('dot-active');
-        });
-        this.navDots[this.currentPageNumber - 1].classList.add('dot-active');
-    }
-    resize() {
-        this.viewHeight = document.documentElement.clientHeight;
-        this.pages.style.height = this.viewHeight + 'px';
-        this.pages.style.top = -this.viewHeight * (this.currentPageNumber - 1) + 'px';
-    }
-    textFadeInOut() {
-        const containersDom = document.getElementsByClassName('text-container');
-        let textContainers = Array.prototype.slice.call(containersDom);
-        textContainers.forEach((e) => {
-            e.classList.remove('in-sight');
-        });
-        let textContainerInSight = textContainers[this.currentPageNumber - 1];
-        // textContainerInSight.classList.add('in-sight');
-    }
+    // createNav() {
+    //     const pageNav = document.createElement('div');
+    //     pageNav.className = 'nav-dot-container';
+    //     this.pages.appendChild(pageNav);
+    //     for (let i = 0; i < this.totalPageNumber; i++) {
+    //         pageNav.innerHTML += '<p class="nav-dot"><span></span></p>';
+    //     }
+    //     const navDots = document.getElementsByClassName('nav-dot');
+    //     this.navDots = Array.prototype.slice.call(navDots);
+    //     this.navDots[0].classList.add('dot-active');
+    //     this.navDots.forEach((e, index) => {
+    //         e.addEventListener('click', (event) => {
+    //             this.scrollTo(index + 1);
+    //             this.navDots.forEach((e) => {
+    //                 e.classList.remove('dot-active');
+    //             });
+    //             e.classList.add('dot-active');
+    //         });
+    //     });
+    // }
+    // updateNav() {
+    //     this.navDots.forEach((e) => {
+    //         e.classList.remove('dot-active');
+    //     });
+    //     this.navDots[this.currentPageNumber - 1].classList.add('dot-active');
+    // }
+    // resize() {
+    //     this.viewHeight = document.documentElement.clientHeight;
+    //     this.pages.style.height = this.viewHeight + 'px';
+    //     this.pages.style.top = -this.viewHeight * (this.currentPageNumber - 1) + 'px';
+    // }
+    // textFadeInOut() {
+    //     const containersDom = document.getElementsByClassName('text-container');
+    //     let textContainers = Array.prototype.slice.call(containersDom);
+    //     textContainers.forEach((e) => {
+    //         e.classList.remove('in-sight');
+    //     });
+    //     let textContainerInSight = textContainers[this.currentPageNumber - 1];
+    //     // textContainerInSight.classList.add('in-sight');
+    // }
     init() {
         let handleMouseWheel = helper.throttle(this.mouseScroll, 0, this);
         let handleResize = helper.debounce(this.resize, 0, this);
         this.pages.style.height = this.viewHeight + 'px';
-        this.createNav();
-        this.textFadeInOut();
+        // this.createNav();
+        // this.textFadeInOut();
         if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
             document.addEventListener('wheel', handleMouseWheel);
         } else {
