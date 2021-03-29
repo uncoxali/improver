@@ -100,7 +100,7 @@ const Home: FC = () => {
 
     const elementRef = useRef<any>(null);
     const form = useRef<any>(null);
-    const div = useRef<HTMLDivElement>(null);
+    const div = useRef<HTMLElement>(null);
 
     useEffect(() => {
         setPlay(!play);
@@ -179,116 +179,329 @@ const Home: FC = () => {
         form.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const handleTouch = (e: any) => {
+        if (document.getElementById('test')?.contains(e.target)) e.preventDefault();
+        console.log('abject');
+    };
+
+    useEffect(() => {
+        // if (div && div.current) {
+        //     console.log({ div }, div.current);
+        //     div?.current?.addEventlistener('touchMove', (e: any) => {
+        //         console.log(e);
+        //     });
+        // }
+        // document.getElementById('test')?.addEventListener('touchmove', (e: any) => {
+        //     console.log({ e });
+        //     e.preventDefault();
+        // });
+
+        document.addEventListener('touchmove', handleTouch, { passive: false });
+        document.addEventListener('touchstart', handleTouch);
+        document.addEventListener('click', handleTouch);
+
+        return () => {
+            document.removeEventListener('touchmove', handleTouch);
+            document.removeEventListener('touchstart', handleTouch);
+            document.removeEventListener('click', handleTouch);
+        };
+    });
+
     if (true)
         return (
-            <FullPage controls>
-                <Slide>
-                    <div className={cn('')}>
-                        <div className={'-mt-10'}>
-                            <div className="overflow-x-hidden absolute w-full -mt-2">
-                                <BackgroundColor
-                                    animation={play}
-                                    backgroundColor={color?.backgroundColor ?? '#FF9A9E'}
-                                />
-                            </div>
-                            <div className="flex lg:top-6 md:top-7 top-16 lg:mt-2 md:-mt-2 -mt-7 w-full absolute justify-center items-center">
-                                <div className="lg:mr-10 md:mr-10 mr-2 right-0 absolute">
-                                    <img
-                                        className="3xl:w-10 lg:w-10 md:w-10 w-10"
-                                        src="/images/menu.png"
-                                        alt=""
+            <div id="test">
+                <FullPage>
+                    <Slide>
+                        <div className={cn('')}>
+                            <div className={'-mt-10'}>
+                                <div className="overflow-x-hidden absolute w-full -mt-2">
+                                    <BackgroundColor
+                                        animation={play}
+                                        backgroundColor={color?.backgroundColor ?? '#FF9A9E'}
                                     />
                                 </div>
-                                <div className="relative text-left lg:mr-0 md:mr-0 mr-10">
-                                    <div className="absolute -ml-5 3xl:w-14 lg:w-10 md:w-10 w-9">
+                                <div className="flex lg:top-6 md:top-7 top-16 lg:mt-2 md:-mt-2 -mt-7 w-full absolute justify-center items-center">
+                                    <div className="lg:mr-10 md:mr-10 mr-2 right-0 absolute">
                                         <img
-                                            className="rounded-lg"
-                                            src={(color as any)?.logo}
+                                            className="3xl:w-10 lg:w-10 md:w-10 w-10"
+                                            src="/images/menu.png"
                                             alt=""
                                         />
                                     </div>
-                                    <div className="ml-6 3xl:ml-12 3xl:mt-3 mt-2 absolute">
-                                        <p className="font-bold">{(color as any)?.text}</p>
-                                    </div>
-                                </div>
-                                <div className="lg:ml-10 md:ml-10 ml-3 w-20 md:w-28 lg:w-28 absolute left-0">
-                                    <img
-                                        className="3xl:w-28 lg:w-24 md:w-20 w-16"
-                                        src="/images/logo/logoWhait.png"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            {/* Slider */}
-                            <div className="lg:top-0 md:top-0 lg:mt-1 md:mt-7 mt-14">
-                                <Slider
-                                    data={data}
-                                    renderItem={({ src }, index, active) => (
-                                        <div
-                                            onClick={() => handleClick(index as number)}
-                                            className="flex items-center justify-center cursor-pointer"
-                                        >
-                                            <Circle1
-                                                fill={color?.backgroundColor}
-                                                className={`absolute z-10 ${
-                                                    active ? 'block' : 'hidden'
-                                                } animate-pingTouch lg:w-16 lg:h-16 md:w-10 md:h-10 w-7 h-7`}
-                                            />
+                                    <div className="relative text-left lg:mr-0 md:mr-0 mr-10">
+                                        <div className="absolute -ml-5 3xl:w-14 lg:w-10 md:w-10 w-9">
                                             <img
-                                                src={src}
-                                                alt="slider"
-                                                className={`3xl:w-48 lg:w-40 sm:w-40 xs:w-36 w-48 mt-10 md:w-40 transition-all duration-300 ${
-                                                    active && 'transform scale-125'
-                                                }`}
+                                                className="rounded-lg"
+                                                src={(color as any)?.logo}
+                                                alt=""
                                             />
                                         </div>
-                                    )}
-                                    getColor={(color) => setColor(color)}
-                                    buttonColor={(color as any)?.button}
-                                />
-                                <div className={cn(`flex justify-center -mt-20`)}>
-                                    <button
-                                        onClick={contactUs}
-                                        className={cn(
-                                            style.scale,
-                                            style.shadowBtn,
-                                            `transition-all duration-300 bg-white 3xl:w-36 3xl:text-lg w-28 p-2 rounded-full shadow-custom outline-none 3xl:-mt-3`,
+                                        <div className="ml-6 3xl:ml-12 3xl:mt-3 mt-2 absolute">
+                                            <p className="font-bold">{(color as any)?.text}</p>
+                                        </div>
+                                    </div>
+                                    <div className="lg:ml-10 md:ml-10 ml-3 w-20 md:w-28 lg:w-28 absolute left-0">
+                                        <img
+                                            className="3xl:w-28 lg:w-24 md:w-20 w-16"
+                                            src="/images/logo/logoWhait.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                                {/* Slider */}
+                                <div className="lg:top-0 md:top-0 lg:mt-1 md:mt-7 mt-14">
+                                    <Slider
+                                        data={data}
+                                        renderItem={({ src }, index, active) => (
+                                            <div
+                                                onClick={() => handleClick(index as number)}
+                                                className="flex items-center justify-center cursor-pointer"
+                                            >
+                                                <Circle1
+                                                    fill={color?.backgroundColor}
+                                                    className={`absolute z-10 ${
+                                                        active ? 'block' : 'hidden'
+                                                    } animate-pingTouch lg:w-16 lg:h-16 md:w-10 md:h-10 w-7 h-7`}
+                                                />
+                                                <img
+                                                    src={src}
+                                                    alt="slider"
+                                                    className={`3xl:w-48 lg:w-40 sm:w-40 xs:w-36 w-48 mt-10 md:w-40 transition-all duration-300 ${
+                                                        active && 'transform scale-125'
+                                                    }`}
+                                                />
+                                            </div>
                                         )}
-                                        style={{ color: color?.button || '#B893DD' }}
-                                    >
-                                        Contact Us
-                                    </button>
+                                        getColor={(color) => setColor(color)}
+                                        buttonColor={(color as any)?.button}
+                                    />
+                                    <div className={cn(`flex justify-center -mt-20`)}>
+                                        <button
+                                            onClick={contactUs}
+                                            className={cn(
+                                                style.scale,
+                                                style.shadowBtn,
+                                                `transition-all duration-300 bg-white 3xl:w-36 3xl:text-lg w-28 p-2 rounded-full shadow-custom outline-none 3xl:-mt-3`,
+                                            )}
+                                            style={{ color: color?.button || '#B893DD' }}
+                                        >
+                                            Contact Us
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </Slide>
-                <Slide>
-                    <div ref={elementRef}>
-                        {show && (
-                            <div className={cn('')}>
-                                <Zoom>
-                                    <div
-                                        className={cn(
-                                            `transform transition-all duration-1000 -mt-22`,
-                                        )}
-                                    >
-                                        <div className="overflow-x-hidden absolute w-full">
+                    </Slide>
+                    {show && (
+                        <Slide>
+                            <div ref={elementRef}>
+                                <div className={cn('')}>
+                                    <Zoom>
+                                        <div
+                                            className={cn(
+                                                `transform transition-all duration-1000 -mt-22`,
+                                            )}
+                                        >
+                                            <div className="overflow-x-hidden absolute w-full">
+                                                <BackgroundLogo
+                                                    backgroundLogo={colorLogo || '#9ADEEC'}
+                                                    animation={playAnim}
+                                                />
+                                            </div>
+                                            <div className="-mt-6">
+                                                <div className="h-16 mt-10 lg:mt-24 md:mt-24">
+                                                    <div className="lg:mr-10 md:mr-10 mr-4 mt-4 right-0 absolute ">
+                                                        <img
+                                                            className="lg:w-10 md:w-10 w-7"
+                                                            src="/images/menu.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                    <div className="lg:ml-10 md:ml-10 lg:w-24 w-14 ml-4 mt-4 md:w-20 absolute left-0 ">
+                                                        <img
+                                                            className=""
+                                                            src="/images/logo/logoWhait.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="lg:mr-48 lg:ml-48 xl:-mt-5 3xl:mt-1 -mt-5">
+                                                    <LogoSlider
+                                                        data={dataImage}
+                                                        renderItem={({ src }, index) => (
+                                                            <div
+                                                                onClick={() =>
+                                                                    handleClick(index as number)
+                                                                }
+                                                                className="cursor-pointer"
+                                                            >
+                                                                <img
+                                                                    src={src}
+                                                                    alt="slider"
+                                                                    className={`3xl:w-17 2xl:w-14 lg:w-14 w-10 md:w-14 mt-5 transition-all duration-300 rounded-full shadow-2xl`}
+                                                                />
+                                                            </div>
+                                                        )}
+                                                    />
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        `right-2 absolute -mt-20 mr-7 lg:block hidden xl:-mt-16`,
+                                                    )}
+                                                >
+                                                    <button
+                                                        onClick={contactUs}
+                                                        className={cn(
+                                                            style.scale,
+                                                            `transition-all duration-300 bg-white w-28 p-2 rounded-full shadow-inner outline-none`,
+                                                        )}
+                                                        style={{
+                                                            color: colorLogo || '#9ADEEC',
+                                                        }}
+                                                    >
+                                                        Contact Us
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div className="-mt-4">
+                                                <div className=" absolute z-10 mt-20 left-2 lg:hidden">
+                                                    <button
+                                                        onClick={contactUs}
+                                                        className={cn(
+                                                            style.scale,
+                                                            `animate-button ransition-all duration-300 delay-500 transform hover:scale-120 bg-white w-20 text-xs p-2 rounded-full shadow-2xl`,
+                                                        )}
+                                                        style={{
+                                                            color: colorLogo || '#9ADEEC',
+                                                        }}
+                                                    >
+                                                        Contact Us
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-2 2xl:mt-16  lg:mt-3 mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page0' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <EvetPage
+                                                        backgroundLogo={colorLogo || '#FDD96C'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page1' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <WinglePage
+                                                        backgroundLogo={colorLogo || '#9ADEEC'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page2' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <FlowPage
+                                                        backgroundLogo={colorLogo || '#FF9A9E'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page3' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <StilyPage
+                                                        backgroundLogo={colorLogo || '#FF9A9E'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-0 2xl:mt-16 lg:mt-0  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page4' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <MeetlyPage
+                                                        backgroundLogo={colorLogo || '#FF9A9E'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page5' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <MinimidmaksPage
+                                                        backgroundLogo={colorLogo || '#FF9A9E'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                                <div
+                                                    className={cn(
+                                                        '3xl:mt-2 2xl:mt-16  lg:mt-0  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                        change == 'page6' ? 'block' : 'hidden',
+                                                    )}
+                                                >
+                                                    <BeauticketPage
+                                                        backgroundLogo={colorLogo || '#FF9A9E'}
+                                                    />
+                                                    <div className={cn('h-40')}></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Zoom>
+                                </div>
+                            </div>
+                        </Slide>
+                    )}
+                    <Slide>
+                        <div className="">
+                            <Modal className="w-full" onClose={() => setOpen(false)} visible={open}>
+                                <div
+                                    className="z-10 absolute lg:-mt-5 lg:right-9 md:-right-16 md:-mt-10 -right-24 flex mt-2 mr-32 cursor-pointer p-1"
+                                    onClick={() => setOpen(false)}
+                                >
+                                    <img className="w-5" src="/images/cancel.png" alt="" />
+                                </div>
+                                <div
+                                    className={cn(
+                                        'lg:mt-10 md:mt-10 flex justify-center items-center',
+                                    )}
+                                >
+                                    <Form backgroundForm={colorLogo || '#9ADEEC'} />
+                                </div>
+                            </Modal>
+                        </div>
+                        {/* slidet menu in form */}
+                        <div className="">
+                            {/* <Logo dataImage={dataImage} /> */}
+                            <div className={cn(style.div, `-mt-20`)} ref={form}>
+                                <div className={cn(`transform transition-all duration-1000 `)}>
+                                    <div className="">
+                                        <div className="overflow-x-hidden overflow-y-hidden 3xl:h-52 lg:h-44 md:h-40 sm:h-40 h-36  absolute w-full">
                                             <BackgroundLogo
                                                 backgroundLogo={colorLogo || '#9ADEEC'}
                                                 animation={playAnim}
                                             />
                                         </div>
-                                        <div className="-mt-6">
+                                        <div className="lg:-mt-6 md:-mt-6">
                                             <div className="h-16 mt-10 lg:mt-24 md:mt-24">
-                                                <div className="lg:mr-10 md:mr-10 mr-4 mt-4 right-0 absolute ">
+                                                <div className="lg:mr-10 md:mr-10 mr-4 mt-4 w-8 right-0 absolute ">
                                                     <img
-                                                        className="lg:w-10 md:w-10 w-7"
+                                                        className="lg:w-10 md:w-10 xs:w-10 xm:w-7"
                                                         src="/images/menu.png"
                                                         alt=""
                                                     />
                                                 </div>
-                                                <div className="lg:ml-10 md:ml-10 lg:w-24 w-14 ml-4 mt-4 md:w-20 absolute left-0 ">
+                                                <div className="lg:ml-10 md:ml-10 3xl:w-28 lg:w-24 xs:w-20 xm:w-16 ml-4 mt-4 md:w-20 absolute left-0 ">
                                                     <img
                                                         className=""
                                                         src="/images/logo/logoWhait.png"
@@ -296,7 +509,7 @@ const Home: FC = () => {
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="lg:mr-48 lg:ml-48 xl:-mt-5 3xl:mt-1 -mt-5">
+                                            <div className="lg:mr-48 lg:ml-48 xl:-mt-5 -mt-2">
                                                 <LogoSlider
                                                     data={dataImage}
                                                     renderItem={({ src }, index) => (
@@ -309,133 +522,34 @@ const Home: FC = () => {
                                                             <img
                                                                 src={src}
                                                                 alt="slider"
-                                                                className={`3xl:w-17 2xl:w-14 lg:w-14 w-10 md:w-14 mt-5 transition-all duration-300 rounded-full shadow-2xl`}
+                                                                className={`3xl:w-16 w-10 md:w-14 mt-5 transition-all duration-300 rounded-full shadow-2xl`}
                                                             />
                                                         </div>
                                                     )}
                                                 />
                                             </div>
-                                            <div
-                                                className={cn(
-                                                    `right-2 absolute -mt-20 mr-7 lg:block hidden xl:-mt-16`,
-                                                )}
-                                            >
-                                                <button
-                                                    onClick={contactUs}
-                                                    className={cn(
-                                                        style.scale,
-                                                        `transition-all duration-300 bg-white w-28 p-2 rounded-full shadow-inner outline-none`,
-                                                    )}
-                                                    style={{
-                                                        color: colorLogo || '#9ADEEC',
-                                                    }}
-                                                >
-                                                    Contact Us
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div className="-mt-4">
-                                            <div className=" absolute z-10 mt-20 left-2 lg:hidden">
-                                                <button
-                                                    onClick={contactUs}
-                                                    className={cn(
-                                                        style.scale,
-                                                        `animate-button ransition-all duration-300 delay-500 transform hover:scale-120 bg-white w-20 text-xs p-2 rounded-full shadow-2xl`,
-                                                    )}
-                                                    style={{
-                                                        color: colorLogo || '#9ADEEC',
-                                                    }}
-                                                >
-                                                    Contact Us
-                                                </button>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3 mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page0' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <EvetPage backgroundLogo={colorLogo || '#FDD96C'} />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page1' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <WinglePage
-                                                    backgroundLogo={colorLogo || '#9ADEEC'}
-                                                />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page2' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <FlowPage backgroundLogo={colorLogo || '#FF9A9E'} />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page3' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <StilyPage
-                                                    backgroundLogo={colorLogo || '#FF9A9E'}
-                                                />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-0 2xl:mt-16 lg:mt-0  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page4' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <MeetlyPage
-                                                    backgroundLogo={colorLogo || '#FF9A9E'}
-                                                />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page5' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <MinimidmaksPage
-                                                    backgroundLogo={colorLogo || '#FF9A9E'}
-                                                />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
-                                            <div
-                                                className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-0  mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
-                                                    change == 'page6' ? 'block' : 'hidden',
-                                                )}
-                                            >
-                                                <BeauticketPage
-                                                    backgroundLogo={colorLogo || '#FF9A9E'}
-                                                />
-                                                <div className={cn('h-40')}></div>
-                                            </div>
                                         </div>
                                     </div>
-                                </Zoom>
+                                </div>
+                                <div
+                                    className={cn(
+                                        screen == false ? `${cn(style.div, ' xm:mt-10')}` : '',
+                                        `3xl:mt-16 2xl:mt-14 xl:mt-10 lg:mt-16 sm:mt-16 flex justify-center items-center`,
+                                    )}
+                                >
+                                    <Form
+                                        backgroundForm={colorLogo || '#9ADEEC'}
+                                        onInputFocus={(inputFocus) => setInputFocus(inputFocus)}
+                                    />
+                                </div>
                             </div>
-                        )}
-                    </div>
-                </Slide>
-                <Slide>
-                    <h1>Another slide content</h1>
-                </Slide>
-                <Slide>
-                    <h1>Another slide content</h1>
-                </Slide>
-            </FullPage>
+                        </div>
+                    </Slide>
+                    <Slide>
+                        <h1>Another slide content</h1>
+                    </Slide>
+                </FullPage>
+            </div>
         );
     return (
         <>
