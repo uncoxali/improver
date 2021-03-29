@@ -288,7 +288,7 @@ const Home: FC = () => {
             <div className="absolute w-full h-screen overflow-hidden">
                 <div ref={fullPageScroll} className="relative top-0 transition-all duration-300">
                     <section className="h-screen w-full sliderEffect">
-                        <div className={cn('lg:-mt-1 md:-mt-5 sm:-mt-14 -mt-14')}>
+                        <div className={cn('lg:-mt-1 md:-mt-5 sm:-mt-14 ')}>
                             <div className={' '}>
                                 <div className="overflow-x-hidden absolute w-full -mt-2">
                                     <BackgroundColor
