@@ -127,7 +127,7 @@ const Home: FC = () => {
     });
 
     const screenWidth = (screen: number) => {
-        setScreen(screen > 700);
+        setScreen(screen > 450);
     };
 
     // click switch in the pages
@@ -280,49 +280,15 @@ const Home: FC = () => {
         fullScroll.scrollDown();
     };
 
-    // const handleTouch = (e: any) => {
-    //     if (document.getElementById('mohamdi')?.contains(e.target)) e.preventDefault();
-    //     console.log('abject');
-    // };
-
-    // useEffect(() => {
-    //     // if (div && div.current) {
-    //     //     console.log({ div }, div.current);
-    //     //     div?.current?.addEventlistener('touchMove', (e: any) => {
-    //     //         console.log(e);
-    //     //     });
-    //     // }
-    //     // document.getElementById('test')?.addEventListener('touchmove', (e: any) => {
-    //     //     console.log({ e });
-    //     //     e.preventDefault();
-    //     // });
-
-    //     document.addEventListener('touchmove', handleTouch, { passive: false });
-    //     document.addEventListener('touchstart', handleTouch);
-    //     document.addEventListener('touchend', handleTouch);
-    //     document.addEventListener('touchcancel', handleTouch);
-    //     document.addEventListener('mousemove', handleTouch);
-    //     document.addEventListener('click', handleTouch);
-
-    //     return () => {
-    //         document.removeEventListener('touchmove', handleTouch);
-    //         document.removeEventListener('touchstart', handleTouch);
-    //         document.removeEventListener('touchend', handleTouch);
-    //         document.removeEventListener('touchcancel', handleTouch);
-    //         document.addEventListener('mousemove', handleTouch);
-    //         document.removeEventListener('click', handleTouch);
-    //     };
-    // });
-
     return (
         <div
             className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen"
             onMouseLeave={() => mouseMove()}
         >
             <div className="absolute w-full h-screen overflow-hidden">
-                <div ref={fullPageScroll} id="all-pages">
-                    <section className="page sliderEffect">
-                        <div className={cn('lg:-mt-1 md:-mt-6 sm:-mt-14 -mt-14')}>
+                <div ref={fullPageScroll} className="relative top-0 transition-all duration-300">
+                    <section className="h-screen w-full sliderEffect">
+                        <div className={cn('lg:-mt-1 md:-mt-5 sm:-mt-14 -mt-14')}>
                             <div className={' '}>
                                 <div className="overflow-x-hidden absolute w-full -mt-2">
                                     <BackgroundColor
@@ -403,8 +369,8 @@ const Home: FC = () => {
                         </div>
                     </section>
                     {show && (
-                        <section className="page sliderEffect">
-                            <div className="">
+                        <section className="h-screen w-full sliderEffect">
+                            <div className="lg:mt-0 md:-mt-25">
                                 <Zoom>
                                     <div className={cn(`transform transition-all duration-1000`)}>
                                         <div className="overflow-x-hidden absolute w-full">
@@ -485,7 +451,7 @@ const Home: FC = () => {
                                             </div>
                                             <div
                                                 className={cn(
-                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3 mt-2 h-screen lg:overflow-hidden md:overflow-hidden sm:overflow-hidden xs:overflow-hidden overflow-auto',
+                                                    '3xl:mt-2 2xl:mt-16  lg:mt-3 mt-2',
                                                     change == 'page0' ? 'block' : 'hidden',
                                                 )}
                                             >
@@ -562,8 +528,8 @@ const Home: FC = () => {
                             </div>
                         </section>
                     )}
-                    <section className={cn(`sliderEffect`)}>
-                        <div className="">
+                    <section className={cn(`h-screen w-full sliderEffect`)}>
+                        <div className="lg:mt-0 md:-mt-24">
                             <Modal className="w-full" onClose={() => setOpen(false)} visible={open}>
                                 <div
                                     className="z-10 absolute lg:-mt-5 lg:right-9 md:-right-16 md:-mt-10 -right-24 flex mt-2 mr-32 cursor-pointer p-1"

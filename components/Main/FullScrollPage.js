@@ -110,8 +110,8 @@ class FullScrollPage {
         // textContainerInSight.classList.add('in-sight');
     }
     init() {
-        let handleMouseWheel = helper.throttle(this.mouseScroll, 500, this);
-        let handleResize = helper.debounce(this.resize, 500, this);
+        let handleMouseWheel = helper.throttle(this.mouseScroll, 600, this);
+        let handleResize = helper.debounce(this.resize, 600, this);
         this.pages.style.height = this.viewHeight + 'px';
         this.createNav();
         this.textFadeInOut();
@@ -121,7 +121,6 @@ class FullScrollPage {
             document.addEventListener('DOMMouseScroll', handleMouseWheel);
         }
         let element = document.querySelectorAll('.sliderEffect');
-        console.log(element);
         [...element].map((item) => {
             item.addEventListener('touchmove', (e) => {
                 e.preventDefault();
@@ -130,16 +129,12 @@ class FullScrollPage {
         });
         document.addEventListener('scroll', handleMouseWheel);
         document.addEventListener('touchstart', (event) => {
-            // this.startY = event.touches[0].pageY;
             this.startX = event.touches[0].pageX;
-
-            console.log({ event }, 'touchstart');
             this.startY = event.touches[0].pageY;
         });
         document.addEventListener('touchend', (event) => {
             let endX = event.changedTouches[0].pageX;
             let endY = event.changedTouches[0].pageY;
-            console.log(this.startY - endY < 60);
             if (
                 this.lock &&
                 Math.abs(this.startY - endY) < 60 &&
@@ -148,7 +143,6 @@ class FullScrollPage {
                 event.preventDefault();
                 return;
             }
-
             if (this.startY - endY < 0) {
                 this.scrollUp();
             }
