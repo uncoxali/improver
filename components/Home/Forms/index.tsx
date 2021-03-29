@@ -107,11 +107,10 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         name="username"
                                         ref={register({ required: true })}
                                         className={cn(
-                                            style.inputScale,
                                             ` ${errors.username && 'border-b-2 border-red-500'} ${
                                                 errors.username &&
                                                 'placeholder-red-600 placeholder-opacity-60'
-                                            } text-white text-base border-b-2 border-white  outline-none placeholder-white placeholder-opacity-40`,
+                                            } text-white text-base border-b-2 border-white  3xl:w-97 2xl:w-97 xl:w-97 lg:w-97 md:w-95 sm:w-97 w-72 outline-none placeholder-white placeholder-opacity-40`,
                                         )}
                                         placeholder="Ad Soyad Giriniz"
                                         type="text"
@@ -136,7 +135,6 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                             },
                                         })}
                                         className={cn(
-                                            style.inputScale,
                                             ` ${errors.email && 'border-b-2 border-red-500'} ${
                                                 errors.email &&
                                                 'placeholder-red-600 placeholder-opacity-60'
@@ -161,7 +159,6 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                             validate: (value) => value.length > 10,
                                         })}
                                         className={cn(
-                                            style.inputScale,
                                             `${errors.phoneNumber && 'border-b-2 border-red-500'} ${
                                                 errors.phoneNumber &&
                                                 'placeholder-red-600 placeholder-opacity-60'
@@ -172,6 +169,30 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         id="formGridCode_card"
                                         style={{ backgroundColor: backgroundForm }}
                                     />
+                                </div>
+
+                                <div className="3xl:mt-5  xs:mt-2 xm:mt-2">
+                                    <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs">
+                                        MESAJ
+                                        <textarea
+                                            onBlur={() => onInputFocus && onInputFocus(true)}
+                                            onFocus={() => onInputFocus && onInputFocus(false)}
+                                            name="description"
+                                            ref={register({ required: true })}
+                                            className={cn(
+                                                style.inputScale,
+                                                `${
+                                                    errors.description &&
+                                                    'border-b-2 border-red-500'
+                                                } ${
+                                                    errors.description &&
+                                                    'placeholder-red-600 placeholder-opacity-60'
+                                                } resize-none shadow form-textarea mt-1 block border-2 border-white rounded 3xl:w-97 2xl:w-97 xl:w-97 lg:w-97 md:w-95 sm:w-97 w-72 py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline placeholder-gray-50 text-sm placeholder-opacity-60`,
+                                            )}
+                                            placeholder="Mesajınızı Yazınız"
+                                            style={{ backgroundColor: backgroundForm }}
+                                        />
+                                    </label>
                                 </div>
                                 <div className="3xl:mt-5 xs:mt-2 xm:mt-2">
                                     <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs ">
@@ -196,29 +217,6 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         <option className="py-1">dijital reklam</option>
                                         <option className="py-1">seo/aso optimizasyon</option>
                                     </select>
-                                </div>
-                                <div className="3xl:mt-5  xs:mt-2 xm:mt-2">
-                                    <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs">
-                                        MESAJ
-                                        <textarea
-                                            onBlur={() => onInputFocus && onInputFocus(true)}
-                                            onFocus={() => onInputFocus && onInputFocus(false)}
-                                            name="description"
-                                            ref={register({ required: true })}
-                                            className={cn(
-                                                style.inputScale,
-                                                `${
-                                                    errors.description &&
-                                                    'border-b-2 border-red-500'
-                                                } ${
-                                                    errors.description &&
-                                                    'placeholder-red-600 placeholder-opacity-60'
-                                                } resize-none shadow form-textarea mt-1 block border-2 border-white rounded 3xl:w-97 2xl:w-97 xl:w-97 lg:w-97 md:w-95 sm:w-97 w-72 py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline placeholder-gray-50 text-sm placeholder-opacity-60`,
-                                            )}
-                                            placeholder="Mesajınızı Yazınız"
-                                            style={{ backgroundColor: backgroundForm }}
-                                        />
-                                    </label>
                                 </div>
                                 <div className="flex justify-end absolute z-10 right-5">
                                     <input

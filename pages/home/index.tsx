@@ -286,9 +286,9 @@ const Home: FC = () => {
             onMouseLeave={() => mouseMove()}
         >
             <div className="absolute w-full h-screen overflow-hidden">
-                <div ref={fullPageScroll} className="relative top-0 transition-all duration-300">
+                <div ref={fullPageScroll} className="relative transition-all duration-300">
                     <section className="h-screen w-full sliderEffect">
-                        <div className={cn('lg:-mt-1 md:-mt-5 sm:-mt-14 xs:-mt-14 -mt-14')}>
+                        <div className={cn('lg:mt-1 md:-mt-5 sm:-mt-14 -mt-14')}>
                             <div className={' '}>
                                 <div className="overflow-x-hidden absolute w-full -mt-2">
                                     <BackgroundColor
@@ -370,7 +370,7 @@ const Home: FC = () => {
                     </section>
                     {show && (
                         <section className="h-screen w-full sliderEffect">
-                            <div className="lg:mt-0 md:-mt-25 xs:-mt-0">
+                            <div className="lg:mt-0 md:-mt-25 -mt-24">
                                 <Zoom>
                                     <div className={cn(`transform transition-all duration-1000`)}>
                                         <div className="overflow-x-hidden absolute w-full">
@@ -529,7 +529,7 @@ const Home: FC = () => {
                         </section>
                     )}
                     <section className={cn(`h-screen w-full sliderEffect`)}>
-                        <div className="lg:mt-0 md:-mt-24 xs:-mt-0">
+                        <div className="lg:mt-0 md:-mt-24 -mt-24">
                             <Modal className="w-full" onClose={() => setOpen(false)} visible={open}>
                                 <div
                                     className="z-10 absolute lg:-mt-5 lg:right-9 md:-right-16 md:-mt-10 -right-24 flex mt-2 mr-32 cursor-pointer p-1"
