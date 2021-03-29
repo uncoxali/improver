@@ -370,7 +370,7 @@ const Home: FC = () => {
                     </section>
                     {show && (
                         <section className="h-screen w-full sliderEffect">
-                            <div className="lg:mt-0 md:-mt-25 xs:-mt-25">
+                            <div className="lg:mt-0 md:-mt-25 xs:-mt-0">
                                 <Zoom>
                                     <div className={cn(`transform transition-all duration-1000`)}>
                                         <div className="overflow-x-hidden absolute w-full">
@@ -529,7 +529,7 @@ const Home: FC = () => {
                         </section>
                     )}
                     <section className={cn(`h-screen w-full sliderEffect`)}>
-                        <div className="lg:mt-0 md:-mt-24 xs:-mt-24">
+                        <div className="lg:mt-0 md:-mt-24 xs:-mt-0">
                             <Modal className="w-full" onClose={() => setOpen(false)} visible={open}>
                                 <div
                                     className="z-10 absolute lg:-mt-5 lg:right-9 md:-right-16 md:-mt-10 -right-24 flex mt-2 mr-32 cursor-pointer p-1"
