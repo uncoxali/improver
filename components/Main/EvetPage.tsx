@@ -242,7 +242,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                     <div className=" w-1/2 lg:h-96 md:h-96 h-28">
                         <div className="absolute">
                             <Fade delay={3000}>
-                                <div className="3xl:mt-52 3xl:mr-72 lg:mt-44 md:mt-28 mt-24 md:mr-5 lg:mr-16 xl:mr-44 2xl:mr-64 lg:w-44 md:w-36 w-28">
+                                <div className="3xl:mt-52 3xl:mr-72 lg:mt-44 md:mt-28 mt-5 md:mr-5 lg:mr-16 xl:mr-44 2xl:mr-64 lg:w-44 md:w-36 w-28">
                                     <p className="text-left text-black 3xl:text-lg  lg:text-sm md:text-sm text-xs">
                                         Ürün kategorisi
                                     </p>
@@ -368,7 +368,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                         <div
                             className={`z-10 absolute  lg:w-4 md:w-3 md:h-3 lg:h-4 lg:block md:block hidden duration-300 delay-700 ${
                                 animationTwo ? 'opacity-1' : 'opacity-0'
-                            } bg-pink-600 h-3 w-3 rounded-full lg:mt-28 md:mt-16 mt-16 left-8 lg:left-10 z-100 shadow`}
+                            } bg-pink-600 h-2 w-2 rounded-full lg:mt-28 md:mt-16 mt-16 left-8 lg:left-10 z-100 shadow`}
                         >
                             <div className="mt-2 -mr-2">
                                 <div
@@ -396,35 +396,29 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                             </div>
                         </div>
                         <div className="lg:hidden md:hidden ">
-                            <div
-                                className={`z-10 absolute  lg:w-4 md:w-4 md:h-4 lg:h-4 transition-all duration-300 delay-700 ${
-                                    animationTwo ? 'opacity-1' : 'opacity-0'
-                                } lg:block md:block bg-pink-600 h-3 w-3 rounded-full lg:mt-28 md:mt-16 mt-16 left-10 lg:left-10 z-100 `}
-                            >
-                                <div className="absolute mr-2">
-                                    <div
+                            <div className="z-10 absolute  lg:w-4 md:w-4 md:h-4 lg:h-4 lg:block md:block bg-pink-600 h-2 w-2 rounded-full lg:mt-28 md:mt-16 mt-16 left-10 lg:left-10 z-100 shadow opacity-70">
+                                <div
+                                    className={cn(
+                                        `border-dashed border-white transition-all duration-300 delay-700 ${
+                                            animationTwo ? 'lg:w-52 md:w-52 w-28' : 'w-0'
+                                        } border-t-2  h-6 mr-1 absolute mt-1 lg:block md:block`,
+                                    )}
+                                ></div>
+                                <div
+                                    className={cn(
+                                        `border-dashed border-white border-l-2 transition-all duration-300 delay-900 ${
+                                            animationTwo ? 'lg:h-10 md:h-10 h-5' : 'h-0'
+                                        } lg:w-52 md:w-53 w-28 lg:mr-5 lg:mt-1 md:mt-1 mt-1 mr-1`,
+                                    )}
+                                >
+                                    <Arrow
+                                        fill="#fff"
                                         className={cn(
-                                            `border-dashed border-white transition-all duration-300 delay-700 ${
-                                                animationTwo ? 'lg:w-52 md:w-52 w-28' : 'w-0'
-                                            } border-t-2  h-6 mr-1 absolute mt-1 lg:block md:block`,
+                                            `transition-all duration-300 delay-1000 ${
+                                                animationTwo ? 'opacity-1' : 'opacity-0'
+                                            } lg:h-4 md:h-4 md:w-4 lg:w-4 w-3 h-3 absolute flex lg:mt-9 md:mt-8 lg:mr-15 md:mr-17 lg:-ml-13 mt-5 mr-25`,
                                         )}
-                                    ></div>
-                                    <div
-                                        className={cn(
-                                            `border-dashed border-white border-l-2 transition-all duration-300 delay-900 ${
-                                                animationTwo ? 'lg:h-10 md:h-10 h-5' : 'h-0'
-                                            } lg:w-52 md:w-53 w-28 lg:mr-5 lg:mt-1 md:mt-1 mt-1 mr-1`,
-                                        )}
-                                    >
-                                        <Arrow
-                                            fill="#fff"
-                                            className={cn(
-                                                `transition-all duration-300 delay-1000 ${
-                                                    animationTwo ? 'opacity-1' : 'opacity-0'
-                                                } lg:h-4 md:h-4 md:w-4 lg:w-4 w-3 h-3 absolute flex lg:mt-9 md:mt-8 lg:mr-15 md:mr-17 lg:-ml-13 mt-5 mr-25`,
-                                            )}
-                                        />
-                                    </div>
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -577,7 +571,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                             </div>
                         </div>
                         <div
-                            className={`z-10 absolute  lg:w-4 md:w-3 md:h-3 lg:h-4 lg:block md:block hidden duration-300 delay-700 ${
+                            className={`z-10 absolute  lg:w-4 md:w-3 md:h-3 lg:h-4 lg:block md:block hidden duration-300 delay-200 ${
                                 animationThree ? 'opacity-1' : 'opacity-0'
                             } bg-pink-600 h-2 w-2 rounded-full lg:mt-14 md:mt-12 mt-16 left-8 lg:left-10 z-100 shadow`}
                         >
@@ -609,11 +603,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
 
                         {/* responsive */}
                         <div className="lg:hidden md:hidden ">
-                            <div
-                                className={`z-10 absolute  lg:w-4 md:w-4 md:h-4 lg:h-4 transition-all duration-300 delay-700 ${
-                                    animationThree ? 'opacity-1' : 'opacity-0'
-                                } lg:block md:block bg-pink-600 h-3 w-3 rounded-full lg:mt-28 md:mt-16 mt-16 left-10 lg:left-10 z-100 shadow opacity-70`}
-                            >
+                            <div className="z-10 absolute  lg:w-4 md:w-4 md:h-4 lg:h-4 lg:block md:block bg-pink-600 h-3 w-3 rounded-full lg:mt-28 md:mt-16 mt-16 left-10 lg:left-10 z-100 shadow opacity-70">
                                 <div
                                     className={cn(
                                         `border-dashed border-white transition-all duration-300 delay-700 ${
@@ -639,13 +629,9 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                                 </div>
                             </div>
                         </div>
-                        <div
-                            className={`absolute z-10 bottom-28 w-3 h-3 bg-pink-500 ${
-                                animationThree ? 'opacity-1' : 'opacity-0'
-                            } rounded-full lg:hidden md:hidden`}
-                        >
+                        <div className="absolute z-10 bottom-28 w-3 h-3 bg-pink-500 rounded-full lg:hidden md:hidden">
                             <div
-                                className={`border-dashed border-red-500 border-b-2  transition-all duration-300 delay-1300 ${
+                                className={`border-dashed border-red-500 border-b-2  transition-all duration-300 ${
                                     animationThree ? 'w-10  -mr-10' : 'w-0'
                                 } mt-1`}
                             ></div>
@@ -663,7 +649,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                         </div>
                         <Flip>
                             <img
-                                className=" 3xl:w-60 object-cover lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
+                                className=" 3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/evet/3.png"
                                 alt=""
                             />
@@ -672,10 +658,10 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
                     <div className=" w-1/2 lg:h-96 md:h-96 h-28">
-                        <div className="z-10 absolute 3xl:mr-80 2xl:mr-52 xl:mr-32 lg:mr-28 md:mr-28 sm:mr-28 mr-5 mt-16">
-                            <Fade delay={2500}>
+                        <div className="z-10 absolute 3xl:mr-80 2xl:mr-52 xl:mr-32 lg:mr-28 md:mr-10 sm:mr-28 mr-5 mt-5">
+                            <Fade delay={3000}>
                                 <img
-                                    className="3xl:w-52 3xl:h-96 md:w-36 md:h-64 lg:w-48 lg:h-80 md:mt-16 sm:w-36 sm:h-60 w-16 h-28"
+                                    className="3xl:w-52 3xl:h-96 md:w-44 md:h-64 lg:w-48 lg:h-80 md:mt-16 sm:w-36 sm:h-60 w-16 h-28"
                                     src="/images/evet/evet-p3.png"
                                     alt=""
                                 />
@@ -797,7 +783,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                             <div
                                 className={`absolute  transition-all duration-300 delay-1300 ${
                                     animationFour ? 'opacity-1' : 'opacity-0'
-                                } w-3 h-3 bg-pink-600 rounded-full`}
+                                } w-2 h-2 bg-pink-600 rounded-full`}
                             ></div>
                             <div
                                 className={cn(
@@ -846,7 +832,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                         <Fade delay={3000}>
                             <div className="z-10 absolute 2xl:mr-40 xl:mr-32 lg:mr-5 md:mt-10">
                                 <div className="3xl:mr-60 lg:mt-52 md:mt-44 mt-40 md:mr-1 lg:w-44 md:w-36 w-28">
-                                    <p className="text-left 3xl:text-lg lg:text-sm md:text-sm text-xs">
+                                    <p className="text-left text-pink-500 3xl:text-lg lg:text-sm md:text-sm text-xs">
                                         Profil kişiselleştirme ve destek ekranı
                                     </p>
                                 </div>

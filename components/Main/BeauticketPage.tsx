@@ -136,7 +136,7 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
 
                     <div className="absolute mt-24">
                         <Circle1
-                            fill="#FF9A9E"
+                            fill="#35028E"
                             onClick={handleClick}
                             className={`z-10   transition-all duration-300 delay-2000 ${
                                 animation ? 'animate-ping' : 'h-0'
@@ -300,7 +300,7 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                     </div>
                     <div className="absolute mt-24">
                         <Circle1
-                            fill="#FF9A9E"
+                            fill="#35028E"
                             onClick={handleClick}
                             className={`z-10  transition-all duration-300 delay-2000 ${
                                 animationTwo ? 'animate-ping' : 'h-0'
@@ -424,7 +424,7 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                     </div>
                     <div className="absolute mt-24">
                         <Circle1
-                            fill="#FF9A9E"
+                            fill="#35028E"
                             onClick={handleClick}
                             className={`z-10  transition-all duration-300 delay-2000 ${
                                 animationThree ? 'animate-ping' : 'h-0'
@@ -548,7 +548,7 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                     </div>
                     <div className="absolute mt-24">
                         <Circle1
-                            fill="#FF9A9E"
+                            fill="#35028E"
                             onClick={handleClick}
                             className={`z-10  transition-all duration-300 delay-2000 ${
                                 animationFour ? 'animate-ping' : 'h-0'
@@ -744,7 +744,7 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                     </div>
                     <div className="absolute mt-24">
                         <Circle1
-                            fill="#FF9A9E"
+                            fill="#35028E"
                             onClick={handleClick}
                             className={`z-10  transition-all duration-300 delay-2000 ${
                                 animationFive ? 'animate-ping' : 'h-0'
