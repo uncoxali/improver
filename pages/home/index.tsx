@@ -110,7 +110,7 @@ const Home: FC = () => {
     useEffect(() => {
         if (lock) return;
         if (scroll == 3) setLock(true);
-        let fullScrollNew = new FullPage(1, scroll, fullPageScroll.current);
+        let fullScrollNew = new FullPage(1, 4, fullPageScroll.current);
 
         fullScrollNew.init();
         setFullScroll(fullScrollNew);
@@ -280,15 +280,27 @@ const Home: FC = () => {
         fullScroll.scrollDown();
     };
 
+    // if (true)
+    //     return (
+    //         <div className="absolute w-full h-screen overflow-hidden">
+    //             <div ref={fullPageScroll} className="relative transition-all duration-300">
+    //                 <section className="h-screen w-full bg-red-300 sliderEffect"></section>
+    //                 <section className="h-screen w-full bg-blue-300 sliderEffect">hello</section>
+    //                 <section className="h-screen w-full bg-green-300 sliderEffect">hello</section>
+    //                 <section className="h-screen w-full bg-red-300 sliderEffect">hello</section>
+    //             </div>
+    //         </div>
+    //     );
+
     return (
         <div
             className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen"
             onMouseLeave={() => mouseMove()}
         >
             <div className="absolute w-full h-screen overflow-hidden">
-                <div ref={fullPageScroll} className="relative transition-all duration-300">
+                <div ref={fullPageScroll} className="relative transition-all duration-700">
                     <section className="h-screen w-full sliderEffect">
-                        <div className={cn('lg:mt-1 md:-mt-5 sm:-mt-14 -mt-14')}>
+                        <div className={cn('lg:-mt-1 md:-mt-5 sm:-mt-14 -mt-14')}>
                             <div className={' '}>
                                 <div className="overflow-x-hidden absolute w-full -mt-2">
                                     <BackgroundColor
