@@ -110,7 +110,7 @@ const Home: FC = () => {
     useEffect(() => {
         if (lock) return;
         if (scroll == 3) setLock(true);
-        let fullScrollNew = new FullPage(1, 4, fullPageScroll.current);
+        let fullScrollNew = new FullPage(1, scroll, fullPageScroll.current);
 
         fullScrollNew.init();
         setFullScroll(fullScrollNew);
