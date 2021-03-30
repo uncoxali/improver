@@ -282,8 +282,8 @@ const Home: FC = () => {
 
     // scroll to form
     const contactUs = () => {
-        // fullScroll.scrollDown();
-        // fullScroll.scrollDown();
+        fullScroll.scrollDown();
+        fullScroll.scrollDown();
     };
 
     if (true)
