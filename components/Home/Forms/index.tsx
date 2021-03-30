@@ -107,6 +107,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         name="username"
                                         ref={register({ required: true })}
                                         className={cn(
+                                            style.inputScale,
                                             ` ${errors.username && 'border-b-2 border-red-500'} ${
                                                 errors.username &&
                                                 'placeholder-red-600 placeholder-opacity-60'
@@ -135,6 +136,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                             },
                                         })}
                                         className={cn(
+                                            style.inputScale,
                                             ` ${errors.email && 'border-b-2 border-red-500'} ${
                                                 errors.email &&
                                                 'placeholder-red-600 placeholder-opacity-60'
@@ -159,6 +161,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                             validate: (value) => value.length > 10,
                                         })}
                                         className={cn(
+                                            style.inputScale,
                                             `${errors.phoneNumber && 'border-b-2 border-red-500'} ${
                                                 errors.phoneNumber &&
                                                 'placeholder-red-600 placeholder-opacity-60'
@@ -180,6 +183,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                             name="description"
                                             ref={register({ required: true })}
                                             className={cn(
+                                                style.inputScale,
                                                 style.inputScale,
                                                 `${
                                                     errors.description &&

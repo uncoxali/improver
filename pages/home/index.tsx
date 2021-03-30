@@ -297,7 +297,7 @@ const Home: FC = () => {
             className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen"
             onMouseLeave={() => mouseMove()}
         >
-            <div className="absolute w-full h-screen overflow-hidden">
+            <div className="relative w-full h-screen overflow-hidden">
                 <div ref={fullPageScroll} className="relative transition-all duration-700">
                     <section className="h-screen w-full sliderEffect">
                         <div className={cn('lg:-mt-1 md:-mt-5 sm:-mt-14 -mt-14')}>
