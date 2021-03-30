@@ -52,7 +52,7 @@
 
 /* iphone */
 
-/* .inputScale {
+.inputScale {
     padding: 13.33333333333px;
     background-color: transparent;
     font-size: 16px;
@@ -64,4 +64,4 @@
     transform-origin: right top;
     margin-bottom: -12px;
     margin-left: -33.333%;
-} */
+}
