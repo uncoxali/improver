@@ -97,10 +97,7 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                             </div>
                             <form onSubmit={handleSubmit(onSubmit)} className="">
                                 <div className="3xl:mt-5 lg:mt-4 md:mt-4 sm:mt-4 xs:mt-2 xm:mt-2">
-                                    <label
-                                        className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs "
-                                        htmlFor="formGridCode_card"
-                                    >
+                                    <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs ">
                                         AD SOYAD
                                     </label>
                                     <input
@@ -115,15 +112,11 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         )}
                                         placeholder="Ad Soyad Giriniz"
                                         type="text"
-                                        id="formGridCode_card"
                                         style={{ backgroundColor: backgroundForm }}
                                     />
                                 </div>
                                 <div className="3xl:mt-5 xs:mt-4 xm:mt-2">
-                                    <label
-                                        className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs "
-                                        htmlFor="formGridCode_card"
-                                    >
+                                    <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs ">
                                         EMAİL ADRESİ
                                     </label>
                                     <input
@@ -144,15 +137,11 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         )}
                                         placeholder="Email Adresi Giriniz"
                                         type="text"
-                                        id="formGridCode_card"
                                         style={{ backgroundColor: backgroundForm }}
                                     />
                                 </div>
                                 <div className="3xl:mt-5  xs:mt-2 xm:mt-2">
-                                    <label
-                                        className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs "
-                                        htmlFor="formGridCode_card"
-                                    >
+                                    <label className="block mb-1 text-white 3xl:text-lg lg:text-xs md:text-xs text-xs ">
                                         TELEFON NUMARASI
                                     </label>
                                     <input
@@ -169,7 +158,6 @@ const Form: FC<Props> = ({ backgroundForm, onInputFocus }) => {
                                         )}
                                         placeholder="Telefon Numarası Giriniz"
                                         type="number"
-                                        id="formGridCode_card"
                                         style={{ backgroundColor: backgroundForm }}
                                     />
                                 </div>

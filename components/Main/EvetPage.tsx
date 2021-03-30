@@ -370,7 +370,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                                 animationTwo ? 'opacity-1' : 'opacity-0'
                             } bg-pink-600 h-3 w-3 rounded-full lg:mt-28 md:mt-16 mt-16 left-8 lg:left-10 z-100 shadow`}
                         >
-                            <div className="mt-2 -mr-2">
+                            <div className="mt-2 mr-4">
                                 <div
                                     className={`border-dashed border-white transition-all duration-300 delay-700 ${
                                         animationTwo ? 'lg:w-28 md:w-16' : 'w-0'
@@ -581,7 +581,7 @@ const PageFive: FC<Props> = ({ backgroundLogo }) => {
                                 animationThree ? 'opacity-1' : 'opacity-0'
                             } bg-pink-600 h-2 w-2 rounded-full lg:mt-14 md:mt-12 mt-16 left-8 lg:left-10 z-100 shadow`}
                         >
-                            <div className="mt-2 -mr-2">
+                            <div className="mt-2 mr-4">
                                 <div
                                     className={`border-dashed border-white transition-all duration-300 delay-700 ${
                                         animationThree ? 'lg:w-28 md:w-16' : 'w-0'
