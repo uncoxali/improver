@@ -137,7 +137,7 @@ class FullScrollPage {
             let endY = event.changedTouches[0].pageY;
             if (
                 this.lock &&
-                Math.abs(this.startY - endY) < 0 &&
+                Math.abs(this.startY - endY) < 60 &&
                 Math.abs(this.startX - endX) > 30
             ) {
                 event.preventDefault();
