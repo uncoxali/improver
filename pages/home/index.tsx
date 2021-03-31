@@ -7,7 +7,7 @@ import style from '@assets/styles/style.module.css';
 
 import Form from '@components/Home/Forms';
 import Footer from '@components/Home/Footer';
-import { Zoom } from 'react-awesome-reveal';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import { useIntersectionObserver } from '@lib/hooks/use-intersection-observer';
 import { Modal } from '@components/ui';
 import LogoSlider from '@components/Logo/LogoSlider';
@@ -286,8 +286,8 @@ const Home: FC = () => {
         fullScroll.scrollDown();
     };
 
-    if (true)
-        return (
+    return (
+        <div className="relative w-full max-w-8xl mx-auto  flex flex-col min-h-screen">
             <div className="fullscreen-container" onMouseLeave={() => mouseMove()}>
                 <div ref={elementRef} id="all-pages">
                     <section className="page sliderEffect">
@@ -360,7 +360,7 @@ const Home: FC = () => {
                                             className={cn(
                                                 style.scale,
                                                 style.shadowBtn,
-                                                `transition-all duration-300 bg-white 3xl:w-36 3xl:text-lg w-28 p-2 rounded-full shadow-custom outline-none 3xl:-mt-3`,
+                                                `  transition-all duration-300 bg-white 3xl:w-36 3xl:text-lg w-28 p-2 rounded-full shadow-custom outline-none 3xl:-mt-3`,
                                             )}
                                             style={{ color: color?.button || '#B893DD' }}
                                         >
@@ -374,7 +374,7 @@ const Home: FC = () => {
                     {show && (
                         <section className="page sliderEffect">
                             <div className="">
-                                <Zoom>
+                                <Zoom direction={'up'}>
                                     <div className={cn(`transform transition-all duration-1000`)}>
                                         <div className="overflow-x-hidden absolute w-full">
                                             <BackgroundLogo
@@ -625,7 +625,8 @@ const Home: FC = () => {
                     </section>
                 </div>
             </div>
-        );
+        </div>
+    );
 };
 
 export default Home;

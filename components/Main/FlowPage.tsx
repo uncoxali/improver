@@ -5,7 +5,7 @@ import Arrow from '@assets/svg/arrow.svg';
 import style from '@assets/styles/style.module.css';
 import Cart from './AllPageCart';
 import { useIntersectionObserver } from '@lib/hooks/use-intersection-observer';
-import { Fade, Flip } from 'react-awesome-reveal';
+import { Fade, Bounce } from 'react-awesome-reveal';
 import AppStore from '@assets/svg/app-store.svg';
 
 interface Props {
@@ -223,13 +223,13 @@ const PageTwo: FC<Props> = ({ backgroundLogo }) => {
                             </div>
                         </div>
 
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Flow/flow1.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                         <div
                             className={`absolute transition-all duration-300 delay-200 ${
                                 animation ? 'opacity-1' : 'opacity-0'
@@ -427,13 +427,13 @@ const PageTwo: FC<Props> = ({ backgroundLogo }) => {
                             </div>
                         </div>
 
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Flow/flow2.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -663,13 +663,13 @@ const PageTwo: FC<Props> = ({ backgroundLogo }) => {
                             </div>
                         </div>
 
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Flow/flow3.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -892,13 +892,13 @@ const PageTwo: FC<Props> = ({ backgroundLogo }) => {
                             </div>
                         </div>
 
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Flow/flow4.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">

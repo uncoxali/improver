@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Circle1 from '@assets/svg/circle.svg';
 import Arrow from '@assets/svg/arrow.svg';
 import { useIntersectionObserver } from '@lib/hooks/use-intersection-observer';
-import { Flip, Fade } from 'react-awesome-reveal';
+import { Flip, Fade, Bounce, JackInTheBox, Zoom } from 'react-awesome-reveal';
 import style from '@assets/styles/style.module.css';
 import Image from 'next/image';
 import Cart from './AllPageCart';
@@ -224,13 +224,13 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce className="">
                             <img
-                                className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
+                                className=" 3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Beuticket/beuticket1.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -351,13 +351,13 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Beuticket/beuticket2.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -467,13 +467,13 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Beuticket/beuticket3.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -660,13 +660,13 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                                 }
                             />
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Beuticket/beuticket4.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -834,13 +834,13 @@ const PageSeven: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Beuticket/beuticket5.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">

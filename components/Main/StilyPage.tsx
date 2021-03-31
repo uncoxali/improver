@@ -6,7 +6,7 @@ import style from '@assets/styles/style.module.css';
 import Cart from './AllPageCart';
 import AppStore from '@assets/svg/app-store.svg';
 
-import { Flip, Fade } from 'react-awesome-reveal';
+import { Bounce, Fade } from 'react-awesome-reveal';
 import { useIntersectionObserver } from '@lib/hooks/use-intersection-observer';
 
 interface Props {
@@ -246,13 +246,13 @@ const PageThre: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="z-10 3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Stily/stily1.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -418,13 +418,13 @@ const PageThre: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Stily/stily2.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -656,13 +656,13 @@ const PageThre: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Stily/stily3.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -849,13 +849,13 @@ const PageThre: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Stily/stily4.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">
@@ -1090,13 +1090,13 @@ const PageThre: FC<Props> = ({ backgroundLogo }) => {
                                 />
                             </div>
                         </div>
-                        <Flip>
+                        <Bounce>
                             <img
                                 className="3xl:w-60  lg:w-52 md:w-40 w-32 -mt-4 ml-5 md:-mt-2"
                                 src="/images/Stily/stily5.png"
                                 alt=""
                             />
-                        </Flip>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="mt-16 lg:h-96 h-32 flex">

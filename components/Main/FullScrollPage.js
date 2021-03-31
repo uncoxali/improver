@@ -110,8 +110,8 @@ class FullScrollPage {
         // textContainerInSight.classList.add('in-sight');
     }
     init() {
-        let handleMouseWheel = helper.throttle(this.mouseScroll, 600, this);
-        let handleResize = helper.debounce(this.resize, 600, this);
+        let handleMouseWheel = helper.throttle(this.mouseScroll, 1000, this);
+        let handleResize = helper.debounce(this.resize, 1000, this);
         this.pages.style.height = this.viewHeight + 'px';
         this.createNav();
         this.textFadeInOut();
