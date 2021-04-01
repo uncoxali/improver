@@ -332,16 +332,20 @@ const Home: FC = () => {
                                     <Slider
                                         data={data}
                                         renderItem={({ src }, index, active) => (
-                                            <div
-                                                onClick={() => handleClick(index as number)}
-                                                className="flex items-center justify-center cursor-pointer"
-                                            >
-                                                <Circle1
-                                                    fill={color?.backgroundColor}
-                                                    className={`absolute z-10 ${
+                                            <div className="flex items-center justify-center">
+                                                <div
+                                                    onClick={() => handleClick(index as number)}
+                                                    className={`flex items-center justify-center z-10  cursor-pointer ${
                                                         active ? 'block' : 'hidden'
-                                                    } animate-pingTouch lg:w-16 lg:h-16 md:w-10 md:h-10 w-7 h-7`}
-                                                />
+                                                    } absolute w-40 lg:h-80 h-80`}
+                                                >
+                                                    <Circle1
+                                                        fill={color?.backgroundColor}
+                                                        className={`absolute z-10 ${
+                                                            active ? 'block' : 'hidden'
+                                                        } animate-pingTouch lg:w-16 lg:h-16 md:w-10 md:h-10 w-7 h-7`}
+                                                    />
+                                                </div>
                                                 <img
                                                     src={src}
                                                     alt="slider"
@@ -374,7 +378,7 @@ const Home: FC = () => {
                     {show && (
                         <section className="page sliderEffect">
                             <div className="">
-                                <Zoom direction={'up'}>
+                                <Zoom>
                                     <div className={cn(`transform transition-all duration-1000`)}>
                                         <div className="overflow-x-hidden absolute w-full">
                                             <BackgroundLogo
