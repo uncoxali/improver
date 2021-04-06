@@ -1,13 +1,26 @@
-const withReactSvg = require('next-react-svg');
-const path = require('path');
+const withPlugins = require('next-compose-plugins');
+const withOptimizedImages = require('next-optimized-images');
+const withFonts = require('next-fonts');
 
-module.exports = withReactSvg({
-    include: path.resolve(__dirname, 'assets/svg'),
-    webpack(config, options) {
-        return config;
-    },
-    env: {
-        API_BASE_URL: 'https://web-api.improver.com.tr/api/project/v1',
-        // API_BASE_URL: 'https://todolist-44d8a.firebaseio.com',
-    },
-});
+const nextConfig = {
+  // distDir: '../../dist/functions/next'
+};
+
+module.exports = withPlugins(
+  [
+    [
+      withOptimizedImages,
+      {
+        mozjpeg: {
+          quality: 90,
+        },
+        webp: {
+          preset: 'default',
+          quality: 90,
+        },
+      },
+    ],
+    withFonts,
+  ],
+  nextConfig
+);
